@@ -1,4 +1,4 @@
-const API_URL = 'https://dummyjson.com/posts';
+const API_URL = 'https://jsonplaceholder.typicode.com/posts';
 
 const postsList = document.getElementById('posts-list');
 const statusMessage = document.getElementById('status');
@@ -20,8 +20,7 @@ async function loadPosts() {
         }
 
         // Преобразуем JSON-ответ в массив JavaScript-объектов.
-        const data = await response.json(); 
-        const posts = data.posts;
+        const posts = await response.json(); 
 
         // Создаём карточки публикаций. textContent безопаснее innerHTML
         // для вывода данных, полученных от внешнего API.
